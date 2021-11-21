@@ -1,10 +1,18 @@
-variable bucket_name {
-	default = "s3-chai103-terra0708"
+variable ami_id {
 	type = string
-	sensitive = true
+	default = "ami-01685d240b8fbbfeb"
 }
 
-variable sse_type {
-	default = "AES256"
+variable instance_type {
 	type = string
+}
+
+variable pem_key {
+	type = string
+	default = "devops-2021"
+}
+
+variable ec2_name {
+	type = string
+	default = "my-ec2"
 }

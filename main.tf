@@ -1,17 +1,10 @@
-resource "aws_s3_bucket" "my_s3" {
-	bucket = var.bucket_name
-
+resource "aws_instance" "my_instance" {
+	ami = var.ami_id
+	instance_type = var.instance_type 
+	key_name = var.pem_key
 	
-	versioning {
-		enabled = true
+	tags = {
+		Name = var.ec2_name
 	}
 	
-	server_side_encryption_configuration {
-		rule { 
-				apply_server_side_encryption_by_default {
-					sse_algorithm = var.sse_type
-				} 
-		}
-	}
 }
-
